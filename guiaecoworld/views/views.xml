@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+
+    <!-- Tree Definition -->
+    <record id="guiaecoworld_tree_view" model='ir.ui.view'>
+      <field name="name">Tree Guia ecoWORLD</field>
+      <field name="model">guiaeco.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="image_small" widget="image"/>
+              <field name="partner_id"/>
+              <field name="activo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form Definition -->
+    <record id="guiaecoworld_form_view" model='ir.ui.view'>
+      <field name="name">Form Guia ecoWORLD</field>
+      <field name="model">guiaeco.clientes</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <field name="company_type" position="after">
+          <field name="partner_id" placeholder="Elije empresa guia" required="True"/>
+        </field>
+        <!--<field name="parent_id" position="replace">
+          <field name="parent_id" attrs="{'invisible': True}"/>
+        </field>-->
+        <notebook position="inside">
+          <page string="Guia ecoWORLD">
+            <group string="Datos Cliente">
+              <field name="activo"/>
+              <field name="especialidad"/>
+              <field name="mapaG"/>
+              <field name="mapaEmbed"/>
+              <field name="fechaIncorporacion"/>
+            </group>
+            <group string="Imagen Publica">
+              <field name="imagenPlaca"/>
+              <field name="cabecera"/>
+            </group>
+          </page>
+        </notebook>
+      </field>
+    </record>
+
+    <!-- Action clientes -->
+    <record id="guiaecoworld.action_window" model="ir.actions.act_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">guiaeco.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Categorias -->
+    <menuitem id="guiaecoworld.clientes" name="Guía ecoWORLD" sequence="1" parent="ecoworld.menu_root"/>
+    <!-- Action Menu -->
+    <menuitem id="guiaecoworld.clientes_lista_guia" name="Clientes" sequence="1" parent="guiaecoworld.clientes" action="guiaecoworld.action_window"/>
+
+
+  </data>
+</odoo>
