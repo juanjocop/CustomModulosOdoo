@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_guiaecoworld_guiaecoworld,guiaecoworld.guiaecoworld,model_guiaecoworld_guiaecoworld,,1,0,0,0
+access_guiaeco_clientes_public,guiaeco.clientes,model_guiaeco_clientes,,1,0,0,0
