@@ -24,12 +24,10 @@
         <field name="company_type" position="after">
           <field name="partner_id" placeholder="Elije empresa guia" required="True"/>
         </field>
-        <!--<field name="parent_id" position="replace">
-          <field name="parent_id" attrs="{'invisible': True}"/>
-        </field>-->
         <notebook position="inside">
           <page string="Guia ecoWORLD">
             <group string="Datos Cliente">
+              <field name="publico" />
               <field name="activo"/>
               <field name="especialidad"/>
               <field name="mapaG"/>

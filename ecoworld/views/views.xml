@@ -16,9 +16,6 @@
         <field name="vat" position="after">
           <field name="cifnif" placeholder="NIF/CIF:"/>
         </field>
-        <field name="company_type" position="after">
-          <field name="publico" />
-        </field>
         <field name="vat" position="replace">
           <field name="vat" attrs="{'invisible': True}"/>
         </field>
