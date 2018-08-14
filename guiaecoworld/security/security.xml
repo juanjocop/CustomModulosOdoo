@@ -1,0 +1,14 @@
+<odoo>
+  <record id="acceso_publico_respartner" model="ir.rule">
+    <field name="name">Damos acceso a usuarios publicos a respartner publico</field>
+    <field name="model_id" ref="model_guiaeco_clientes"/>
+    <field name="groups" eval="[(4, ref('base.group_public'))]"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+    <field name="domain_force">
+        [('publico','=',True)]
+    </field>
+  </record>
+</odoo>
