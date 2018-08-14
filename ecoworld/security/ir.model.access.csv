@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ecoworld_ecoworld,ecoworld.ecoworld,model_ecoworld_ecoworld,base.group_public,1,0,0,0
+"access_ecoworld_public","ecoworld_res_partner","model_ecoworld_res_partner",,1,0,0,0

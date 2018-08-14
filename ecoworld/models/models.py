@@ -11,6 +11,7 @@ class contactoeco(models.Model):
     referidos = fields.One2many('res.partner', 'referido', string="Referidos")
     cifnif = fields.Char(string="NIF/CIF")
     nombrefiscal = fields.Char(string="Nombre Fiscal")
+    publico = fields.Boolean(string="Publico")
 
     @api.constrains('cifnif')
     @api.one
