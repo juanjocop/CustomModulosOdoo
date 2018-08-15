@@ -101,7 +101,7 @@
                 <div class="row">
                   <t t-foreach="clientes" t-as="cliente">
                     <div class="col col-md-3 col-xs-12 col-lg-2 col-sm-6 container_panel_ficha_cliente">
-                      <div class="panel panel-primary">
+                      <div class="panel panel-primary clientes-todos">
                         <div class="panel-heading">
                           <h3 class="text-center panel-title">
                             <t t-esc="cliente.name"/>
