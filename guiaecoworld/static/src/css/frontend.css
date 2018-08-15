@@ -232,8 +232,8 @@ div.lema{
 
 @media /*(min-width: 992px) and */(max-width: 1199px){
   .img_ficha_cliente{
-    max-width:120px;
-    max-height:120px;
+    max-width:140px;
+    max-height:140px;
   }
 
   .google-maps, .google-maps iframe{
