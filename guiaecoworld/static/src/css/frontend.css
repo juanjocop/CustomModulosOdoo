@@ -102,8 +102,11 @@ div#wrapwrap{
   padding: 10px 15px 10px 15px;
 }
 
-.container_panel_ficha_cliente .clientes-todos{
-	height: 440px;
+.container_panel_ficha_cliente.clientes-todos{
+	/*overflow: hidden;
+  position: relative;*/
+  height: 35em;
+  
 }
 
 div.search-frontend{
