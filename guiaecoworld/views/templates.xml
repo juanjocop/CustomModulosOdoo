@@ -60,7 +60,7 @@
                 </div>
                 <div class="row">
                   <t t-foreach="clientes4" t-as="cliente">
-                    <div class="col col-md-4 col-xs-12 col-lg-3 col-sm-6 container_panel_ficha_cliente">
+                    <div class="col col-md-4 col-xs-12 col-lg-3 col-sm-6 container_panel_ficha_cliente clientes-ultimos">
                       <div class="panel panel-primary">
                         <div class="panel-heading">
                           <h3 class="text-center panel-title">
@@ -68,12 +68,12 @@
                           </h3>
                         </div>
                         <div class="panel-body">
-                          <div class="col col-md-4 col-xs-12 text-center">
+                          <div class="col col col-md-12 col-lg-6 text-center">
                             <div class="o_field_image o_field_widget oe_avatar">
                               <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image_medium}}" class="img img-responsive img-thumbnail img_ficha_cliente" />
                             </div>
                           </div>
-                          <div class="col col-md-8 col-xs-12 panel-body">
+                          <div class="col col col-md-12 col-lg-6 panel-body">
                             <div class="row">
                               <p class="text-center"><t t-esc="cliente.city"/>, <t t-esc="cliente.state_id.name"/></p>
                             </div>

@@ -102,6 +102,16 @@ div#wrapwrap{
   padding: 10px 15px 10px 15px;
 }
 
+.container_panel_ficha_cliente.clientes-ultimos .panel-footer{
+  height: 4em;
+}
+
+.container_panel_ficha_cliente.clientes-ultimos .panel-footer h4{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .container_panel_ficha_cliente.clientes-todos{
 	/*overflow: hidden;
   position: relative;*/
@@ -211,7 +221,7 @@ div.lema{
 
 @media (min-width: 1200px) {
   .img_ficha_cliente{
-    max-width:140px;
+    max-width:100%;
     max-height:140px;
   }
 
@@ -222,8 +232,8 @@ div.lema{
 
 @media /*(min-width: 992px) and */(max-width: 1199px){
   .img_ficha_cliente{
-    max-width:90px;
-    max-height:90px;
+    max-width:120px;
+    max-height:120px;
   }
 
   .google-maps, .google-maps iframe{
