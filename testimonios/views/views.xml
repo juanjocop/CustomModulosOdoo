@@ -28,6 +28,7 @@
           <page string="Testimonio">
             <group string="Activar">
               <field name="activo"/>
+              <field name="publico"/>
             </group>
             <group string="Opinion">
               <field name="calidadPresentacion" widget="selection"/>
