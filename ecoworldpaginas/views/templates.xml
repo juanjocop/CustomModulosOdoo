@@ -13,7 +13,9 @@
 			<t t-call="website.layout">
 				<t t-set="title">Inicio</t>
 				<div id="cabecera">
-					<div class="video_cabecera">
+					<!-- === Snippets' area === -->
+					<div class="oe_structure" />
+					<!--<div class="video_cabecera">
 						<video poster="" controls="controls" muted="muted" preload="auto" loop="true" autoplay="true">
 							<source type="video/mp4" src="/ecoworldpaginas/static/video/VideoCabecera.mp4"/>
 							<source type="video/ogg" src="/ecoworldpaginas/static/video/VideoCabecera.ogv"/>
@@ -31,7 +33,7 @@
 							<h1>Bienvenidos a <span id="texto_eco_cabecera">ecoWORLD</span></h1><img id="img_eco_cabecera" src="/ecoworldpaginas/static/img/ECOWORLDaSecas.png" alt="ecoWORLD"/>
 						</div>
 						<h2>El modo más práctico y eficaz de ahorrar costes en tu negocio y hogar aportando salud, comodidad y ecología</h2>
-					</div>
+					</div>-->
 				</div>
 				<div class="container cuerpo">
 					<div class="row text-center">
