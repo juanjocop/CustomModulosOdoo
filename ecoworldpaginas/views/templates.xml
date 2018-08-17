@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+	
+		<!--CSS para frontend guia-->
+		  <template id="assets_frontend" inherit_id="web.assets_frontend">
+			<xpath expr="." position="inside">
+			  <link rel="stylesheet" href="/ecoworldpaginas/static/src/css/inicio.css"/>
+			</xpath>
+		  </template>
+		
+        <!-- Template página Inicio -->
+		<template id="ecoworld_pagina_inicio" name="Página Inicio de ecoWORLD">
+			<t t-call="website.layout">
+				<t t-set="title">Inicio</t>
+				<div id="cabecera">
+					<div class="video_cabecera">
+						<video poster="" controls="controls" muted="muted" preload="auto" loop="true" autoplay="true">
+							<source type="video/mp4" src="/ecoworldpaginas/static/video/VideoCabecera.mp4"/>
+							<source type="video/ogg" src="/ecoworldpaginas/static/video/VideoCabecera.ogv"/>
+							<object width="1900" height="1060" type="application/x-shockwave-flash" data="/ecoworldpaginas/static/src/js/flashmediaelement.swf">
+								<param name="movie" value="/ecoworldpaginas/static/src/js/flashmediaelement.swf"/>
+								<param name="flashvars" value="controls=true&amp;file=/ecoworldpaginas/static/video/VideoCabecera.mp4"/>
+								<img src="" title="No video playback capabilities"/>
+							</object>
+						</video>
+						<div id="capa_opaca">
+						</div>
+					</div>
+					<div class="row texto_cabecera text-center">
+						<div class="row">
+							<h1>Bienvenidos a <span id="texto_eco_cabecera">ecoWORLD</span></h1><img id="img_eco_cabecera" src="/ecoworldpaginas/static/img/ECOWORLDaSecas.png" alt="ecoWORLD"/>
+						</div>
+						<h2>El modo más práctico y eficaz de ahorrar costes en tu negocio y hogar aportando salud, comodidad y ecología</h2>
+					</div>
+				</div>
+				<div class="container cuerpo">
+					<div class="row text-center">
+						<div class="col col-xs-12 col-md-4">
+							<img src="/ecoworldpaginas/static/img/professionals-icon.png" alt="Profesional"/>
+							<h3>Profesional</h3>
+							<p>
+								Ponemos a su disposición un grupo de profesionales que se encargarán de evaluar las necesidades de su negocio u hogar
+							</p>
+						</div>
+						<div class="col col-xs-12 col-md-4">
+							<img src="/ecoworldpaginas/static/img/iconDinero150Blue.png" alt="Sin Coste"/>
+							<h3>Sin Coste</h3>
+							<p>
+								Le realizamos un estudio integral sobre el gasto de su negocio u hogar, todo lo que puede ahorrar mes a mes, y le proponemos soluciones adaptadas a sus necesidades. Todo esto, <strong>SIN NINGÚN COSTE</strong>
+							</p>
+						</div>
+						<div class="col col-xs-12 col-md-4">
+							<img src="/ecoworldpaginas/static/img/Tierra_Icon_Blue.png" alt="100% Ecologico"/>
+							<h3>100% Ecológico</h3>
+							<p>
+								Le enseñamos soluciones eficaces, prácticas y cómodas de reducir costes y tiempo de trabajo al mismo tiempo que contribuimos con el medio ambiente evitando el uso de químicos
+							</p>
+						</div>
+					</div>
+				</div>
+				 <!-- === Snippets' area === -->
+				<div class="oe_structure" />
+			</t>
+		</template>
+		
+		<!-- Añadir al menu de la pagina de inicio -->
+		<record id="ecoworld_inicio_menu" model="website.menu">
+          <field name="name">Inicio</field>
+          <field name="url">/</field>
+          <field name="parent_id" ref="website.main_menu"/>
+          <field name="sequence" type="int">1</field>
+        </record>
+		
+        <record id="ecoworld_inicio" model="website.page">
+          <field name="name">Inicio</field>
+          <field name="url">/</field>
+          <field name="view_id" ref="ecoworld_pagina_inicio"/>
+        </record>
+		
+    </data>
+</odoo>
