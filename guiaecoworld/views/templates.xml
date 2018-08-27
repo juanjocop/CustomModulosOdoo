@@ -35,16 +35,22 @@
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col col-md-6 col-xs-12 search-frontend">
+                  <div class="col col-md-4 col-xs-12 search-frontend">
                     <div class="input-group text-center" style="width:100%">
                       <label for="search_autocomplete_provincia" class="text-info"><strong>Filtrar por provincia: </strong></label>
                       <input id='search_autocomplete_provincia' type="text" name="search_provincia" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search_provincia"/>
                     </div>
                   </div>
-                  <div class="col col-md-6 col-xs12 search-frontend">
+                  <div class="col col-md-4 col-xs12 search-frontend">
                     <div class="input-group text-center" style="width:100%">
                       <label for="search_autocomplete_localidad" class="text-info"><strong>Filtrar por Localidad: </strong></label>
                         <input id='search_autocomplete_localidad' type="text" name="search_localidad" class="search-query oe_search_box" placeholder="Buscar por localidad" t-att-value="search_localidad"/>
+                    </div>
+                  </div>
+                  <div class="col col-md-4 col-xs12 search-frontend">
+                    <div class="input-group text-center" style="width:100%">
+                      <label for="search_autocomplete_nombre" class="text-info"><strong>Filtrar por Nombre: </strong></label>
+                        <input id='search_autocomplete_nombre' type="text" name="search_nombre" class="search-query oe_search_box" placeholder="Buscar por nombre" t-att-value="search_nombre"/>
                     </div>
                   </div>
                 </div>
@@ -54,9 +60,10 @@
             <div class="oe_structure">
               <div id="ultimas-incorporaciones" class="container-fluid">
                 <div class="row">
-                  <h2 t-if="provincia" class="text-center">Últimas incorporaciones de <strong><t t-esc="provincia" /></strong>:</h2>
-                  <h2 t-elif="localidad" class="text-center">Últimas incorporaciones de <strong><t t-esc="localidad" /></strong>:</h2>
-                  <h2 t-else="" class="text-center">Últimas incorporaciones:</h2>
+                  <h2 t-if="provincia" class="text-center">Últimas 4 incorporaciones de <strong><t t-esc="provincia" /></strong>:</h2>
+                  <h2 t-elif="localidad" class="text-center">Últimas 4 incorporaciones de <strong><t t-esc="localidad" /></strong>:</h2>
+                  <h2 t-elif="nombre" class="text-center">Últimas 4 incorporaciones de <strong><t t-esc="nombre" /></strong>:</h2>
+                  <h2 t-else="" class="text-center">Últimas 4 incorporaciones:</h2>
                 </div>
                 <div class="row">
                   <t t-foreach="clientes4" t-as="cliente">

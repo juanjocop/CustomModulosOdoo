@@ -23,20 +23,13 @@ class Guiaeco(http.Controller):
                 {'clientes4': Clientes.search([('activo', '=', True), ('city', '=', search)], limit=4, order="fechaIncorporacion desc"),
                 'localidad': search,
                 'clientes': Clientes.search([('activo', '=', True), ('city', '=', search)], limit=100, order="name")})
+        elif type == 'nombre':
+            Clientes = http.request.env['guiaeco.clientes']
+            return http.request.render('guiaecoworld.guiaecoworld_contenido',
+                {'clientes4': Clientes.search([('activo', '=', True), ('name', '=', search), ('id', '=', lugar)], limit=4, order="fechaIncorporacion desc"),
+                'localidad': search,
+                'clientes': Clientes.search([('activo', '=', True), ('name', '=', search), ('id', '=', lugar)], limit=100, order="name")})
 
     @http.route('/guiaecoworld/<model("guiaeco.clientes"):cliente>/', auth="public", website=True)
     def guiaecocliente(self, cliente, **kw):
         return http.request.render('guiaecoworld.ficha_cliente_guia', {'cliente': cliente})
-
-#     @http.route('/guiaeco/guiaeco/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('guiaeco.listing', {
-#             'root': '/guiaeco/guiaeco',
-#             'objects': http.request.env['guiaeco.guiaeco'].search([]),
-#         })
-
-#     @http.route('/guiaeco/guiaeco/objects/<model("guiaeco.guiaeco"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('guiaeco.object', {
-#             'object': obj
-#         })

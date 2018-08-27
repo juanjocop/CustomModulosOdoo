@@ -53,3 +53,20 @@ class WebsiteSearchLocalidad(http.Controller):
             'query': 'Unit',
             'suggestions': results
         })
+
+class WebsiteSearchNombre(http.Controller):
+    @http.route(['/guiaecoworld/get_nombre'], type='http', auth="public", methods=['GET'], website=True)
+    def get_suggest_json(self, **kw):
+        query = kw.get('query')
+        names = query.split(' ')
+        domain = ['|' for k in range(len(names) - 1)] + [('name', 'ilike', name) for name in names]
+        nombres = request.env['guiaeco.clientes'].search(domain)
+        nombres = sorted(nombres, key=lambda x: SequenceMatcher(None, query.lower(), x.name.lower()).ratio(),
+                          reverse=True)
+        results = []
+        for nombre in nombres:
+            results.append({'value': nombre.name, 'data': {'id': nombre.id, 'after_selected': nombre.name}})
+        return json.dumps({
+            'query': 'Unit',
+            'suggestions': results
+        })

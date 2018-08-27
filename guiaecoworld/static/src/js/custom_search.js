@@ -23,4 +23,12 @@ odoo.define("website_search_autocomplete.custom_search", function (require) {
                 '/guiaecoworld/' + '77' + '?search=' + suggestion.value + '&type=localidad');
         }
     });
+
+    $('#search_autocomplete_nombre').devbridgeAutocomplete({
+      serviceUrl: '/guiaecoworld/get_nombre',
+      onSelect: function (suggestion){
+        window.location.replace(window.location.origin +
+          '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value + '&type=nombre');
+      }
+    });
 });
